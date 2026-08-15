@@ -1,0 +1,32 @@
+{
+  "shot": 156588,
+  "converged_only": false,
+  "metric": "bc_pred 8-control-point Euclidean RMSE via shape_params (best per phase; paper_igbt)",
+  "rank_solve": {
+    "nx": 65,
+    "maxit": 40,
+    "rtol": 0.008,
+    "note": "粗网格/限迭代仅用于排序; 成图以 nx=129 rtol=1e-3 重解"
+  },
+  "ramp_up": {
+    "k": 5,
+    "time_s": 1.6320000000000001,
+    "bc_lcfs_rmsep_m": 0.07091564144212321,
+    "pcs_lcfs_rmsep_m": 0.05582281543903387,
+    "sum_rmsep_m": 0.1267384568811571
+  },
+  "flat_top": {
+    "k": 15,
+    "time_s": 3.852,
+    "bc_lcfs_rmsep_m": 0.019201261554415115,
+    "pcs_lcfs_rmsep_m": 0.03415101183039569,
+    "sum_rmsep_m": 0.05335227338481081
+  },
+  "ramp_down": {
+    "k": 43,
+    "time_s": 10.512,
+    "bc_lcfs_rmsep_m": 0.015179899271814908,
+    "pcs_lcfs_rmsep_m": 0.04154989950333993,
+    "sum_rmsep_m": 0.056729798775154834
+  }
+}

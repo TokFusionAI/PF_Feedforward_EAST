@@ -1,0 +1,364 @@
+node_infos:
+
+  # ZKZI east tree.
+  IC1_received: ["ZKZI", "ZKZV"]
+
+  # IC: ["SYCIC1", "SYCIC2", "pcic1", "CCICMODE",]
+  # SYCIC2 is very rare, so deprecate it.
+  IC: ["SYCIC1", "pcic1", "CCICMODE",]
+
+  # IPM magnetic measurement of plasma current, TFP is high resolution bt0
+  EAST_D0: ["PCRL01", "PCRL02", "IPM", "TFP"]
+    
+  # PCSD0: [
+  #   "PFSWMHD", "PFSAMINOR", "BTEBETAN", "BTEBETAT", "BTEBETAP",
+  #   "BTELI", "LMTIPREF", "pcvloop", "DFSDEV", "DPSQ95", 
+  #   "lmsr", "lmsz", "lmsrx1", "lmsrx2", "lmszx1", "lmszx2",
+  #   "pcit", "pcvloop"]
+
+  # relatively high fidelity data can get from pcs_east
+  PCSD0: ["PCRL01", "PCRL02", "PFSWMHD", "PFSAMINOR", "PFSBETAN", "PFSBETAP", "PFSBETAT",
+    "PFSLI", "LMTIPREF",  "DFSDEV", "PFSKAPPA", "PFSQ95", "lmsr", "lmsz", 
+    "lmsrx1", "lmsrx2", "lmszx1", "lmszx2", "pcit", "pcvloop",
+    "PFSBP", "EFSVOLUME", ]
+
+  # PradTot_axuv is always valid
+  Tei: ["Te0_HRS", "Te_maxTS", "Ti0_TXCS", "PradTot_axuv"]
+  # modified on 2026-01-27
+  Vt0: ["Vt0_TXCS"] # no data in Vt0_CXRS_T
+
+  fueling_signals: ["JHG1","JHG2","JHG3","JHG4","JHG5",
+    "JHG6","OUG1","ODG1","HDG1","CDG1",
+    "DHG1","KHG1","SMBI1","SMBI2",
+    "SMBI3","VPI20",]
+
+  shape_refs: ["EFSSEG01RT",  "EFSSEG02RT",
+    "EFSSEG02ZT",  "EFSSEG03RT",  "EFSSEG03ZT",
+    "EFSSEG04RT",  "EFSSEG04ZT",  "EFSSEG05RT",
+    "EFSSEG05ZT",  "EFSSEG06RT",  "EFSSEG06ZT",
+    "EFSSEG07RT",  "EFSSEG08RT",
+    "EFSSEG08ZT",  "EFSSEG09RT",  "EFSSEG09ZT",
+    "EFSSEG10RT",  "EFSSEG10ZT",  "EFSSEG11RT",
+    "EFSSEG11ZT",
+    "EFSSEG13RT",  "EFSSEG13ZT",  "EFSSEG14RT",
+    "EFSSEG15RT",  "EFSSEG15ZT",
+    "EFSSEG16RT",  "EFSSEG16ZT",
+    "EFSG1RXT", "EFSG1ZXT", "EFSG2RXT", "EFSG2ZXT"]
+
+  # Often used Deuterium_alpha
+  Deuterium_alpha: ["DAL1","DAU1","DAL2","DAU2","DAL3", "DAU3"]
+
+  # remove useless keys of SYTPS13 and SYTPS14
+  PF_nominal: ["LMTPF1", "LMTPF2", "LMTPF3", "LMTPF4", "LMTPF5", "LMTPF6",
+    "LMTPF7", "LMTPF8", "LMTPF11", "LMTPF12", "LMTPF13",
+    "LMTPF14", "IATPF1FF", "IATPF2FF", "IATPF3FF", "IATPF4FF", "IATPF5FF",
+    "IATPF6FF", "IATPF7FF", "IATPF8FF", "IATPF11FF", "IATPF12FF",
+    "IATPF13FF", "IATPF14FF", "SYTPS1", "SYTPS2", "SYTPS3", "SYTPS4",
+    "SYTPS5", "SYTPS6", "SYTPS7", "SYTPS8", "SYTPS9", "SYTPS10", "SYTPS11",
+    "SYTPS12",
+    ]
+
+  NBI: ["NBI1LHV", "NBI1LHI","NBI1RHV", "NBI1RHI", "NBI2LHV",
+    "NBI2LHI", "NBI2RHV", "NBI2RHI"]
+  ICRH: ["ICRF1","ICRF2","ICRF3", "ICRF4","ICRF5","ICRF6","ICRF7",
+    "ICRF8","ICRF9","ICRF10","ICRF11","ICRF12","ICRF13","ICRF14","ICRF15",
+    "ICRF16"]
+  PICRH: ["PICRFII", "PICRFIR",
+    # "PICRFBI", "PICRFBR",  # valid before 119300 (included)
+    "PICRFNI", "PICRFNR", # valid after 119300 (non-included)
+    "PICRF1I","PICRF1R","PICRF2I","PICRF2R","PICRF3I","PICRF3R","PICRF4I",
+    "PICRF4R","PICRF5I","PICRF5R","PICRF6I","PICRF6R","PICRF7I","PICRF7R",
+    "PICRF8I", "PICRF8R"]
+  LHW: ["PLHI1","PLHR1","PLHI2","PLHR2"]
+  ECRH: ["ECRH1","ECRH2","ECRH3","ECRH4"]
+  PECRH: ["PECRH1I", "PECRH2I", "PECRH3I", "PECRH4I"]
+
+  # all power of radiation, but it not always valid.
+  Prad_full: ["PradTot_axuv", "R_axuv", "Z_axuv", "Prad_axuv"]
+
+  PXUV: ["Pxuv1","Pxuv2","Pxuv3","Pxuv4","Pxuv5","Pxuv6","Pxuv7","Pxuv8",
+    "Pxuv9","Pxuv10","Pxuv11","Pxuv12","Pxuv13","Pxuv14","Pxuv15",
+    "Pxuv16","Pxuv17","Pxuv18","Pxuv19","Pxuv20","Pxuv21","Pxuv22",
+    "Pxuv23","Pxuv24","Pxuv25","Pxuv26","Pxuv27","Pxuv28","Pxuv29",
+    "Pxuv30","Pxuv31","Pxuv32","Pxuv33","Pxuv34","Pxuv35","Pxuv36",
+    "Pxuv37","Pxuv38","Pxuv39","Pxuv40","Pxuv41","Pxuv42","Pxuv43",
+    "Pxuv44","Pxuv45","Pxuv46","Pxuv47","Pxuv48","Pxuv49","Pxuv50",
+    "Pxuv51","Pxuv52","Pxuv53","Pxuv54","Pxuv55","Pxuv56","Pxuv57",
+    "Pxuv58","Pxuv59","Pxuv60","Pxuv61","Pxuv62","Pxuv63","Pxuv64", ]
+
+  CXUV: ["Cxuv1V","Cxuv2V","Cxuv3V","Cxuv4V","Cxuv5V","Cxuv6V","Cxuv7V",
+    "Cxuv8V","Cxuv9V","Cxuv10V","Cxuv11V","Cxuv12V","Cxuv13V","Cxuv14V",
+    "Cxuv15V","Cxuv16V","Cxuv17V","Cxuv18V","Cxuv19V","Cxuv20V","Cxuv21V",
+    "Cxuv22V","Cxuv23V","Cxuv24V"]
+
+  HRS_raw: ["HRS01H","HRS02H","HRS03H","HRS04H","HRS05H","HRS06H","HRS07H",
+    "HRS08H","HRS09H","HRS10H","HRS11H","HRS12H","HRS13H","HRS14H","HRS15H",
+    "HRS16H","HRS17H","HRS18H","HRS19H","HRS20H","HRS21H","HRS22H","HRS23H",
+    "HRS24H","HRS25H","HRS26H","HRS27H","HRS28H","HRS29H","HRS30H","HRS31H",
+    "HRS32H","HRS33H","HRS34H","HRS35H","HRS36H","HRS37H","HRS38H","HRS39H",
+    "HRS40H","HRS41H","HRS42H","HRS43H","HRS44H","HRS45H","HRS46H","HRS47H",
+    "HRS48H",]
+
+  HCN: ["HCN1", "HCN2", "HCN3"]
+  # Removed, VB8,9,10, because there aren't data.
+  VBMS_raw: ["VB0", "VB1", "VB2", "VB3", "VB4", "VB5", "VB6", "VB7",
+    "VB11", "VB12"]
+
+  POINT_N: ["POINT_N1","POINT_N2","POINT_N3","POINT_N4",
+    "POINT_N5","POINT_N6","POINT_N7","POINT_N8","POINT_N9",
+    "POINT_N10","POINT_N11"]
+  POINT_F: ["POINT_F1","POINT_F2","POINT_F3","POINT_F4","POINT_F5",
+    "POINT_F6","POINT_F7","POINT_F8","POINT_F9","POINT_F10","POINT_F11"]
+
+  # gas puffing, Added on 2026-01-01
+  GAS: ["JHG1","JHG2","JHG3","JHG4","JHG5","JHG6",
+    "OUG1", "ODG1", "HDG1","CDG1", "DHG1", "KHG1"]
+
+  # PCS PF current. (+output)
+  pcs_PF_current: ["PCPF1","PCPF2","PCPF3","PCPF4","PCPF5","PCPF6","PCPF7","PCPF8",
+    "PCPF11","PCPF12","PCPF13","PCPF14"]
+
+  # sycps13, sycps14 do not have data.
+  pcs_PF_voltage: ["sycps1", "sycps2", "sycps3", "sycps4", "sycps5", "sycps6",
+    "sycps7", "sycps8", "sycps9", "sycps10", "sycps11", "sycps12"]
+
+  # BP = expmp = magentic node. 磁场信号
+  BP: ["pcbpv1t","pcbpv2t","pcbpv3t","pcbpv4t","pcbpv5t","pcbpv6t","pcbpv7t",
+    "pcbpv8t","pcbpv9t","pcbpv10t","pcbpv11t","pcbpv12t","pcbpv13t","pcbpv14t",
+    "pcbpv15t","pcbpv16t","pcbpv17t","pcbpv18t","pcbpv19t","pcbpv20t","pcbpv21t",
+    "pcbpv22t","pcbpv23t","pcbpv24t","pcbpv25t","pcbpv26t","pcbpv27t","pcbpv28t",
+    "pcbpv29t","pcbpv30t", "pcbpl1t","pcbpl2t","pcbpl3t","pcbpl4t","pcbpl5t",
+    "pcbpl6t","pcbpl7t","pcbpl8t"]
+
+  # FLux node 单匝环 = "coils". mangeic singal
+  FL: ["pcfl1","pcfl2","pcfl3","pcfl4","pcfl5","pcfl6","pcfl7","pcfl8","pcfl9",
+    "pcfl10","pcfl11","pcfl12","pcfl13","pcfl14","pcfl15","pcfl16","pcfl17",
+    "pcfl18","pcfl19","pcfl20","pcfl21","pcfl22","pcfl23","pcfl24","pcfl25",
+    "pcfl26","pcfl27","pcfl28","pcfl29","pcfl30","pcfl31","pcfl32","pcfl33",
+    "pcfl34","pcfl35"]
+
+  # Removed Regular_Mirnov, because they are no data.
+  # Removed Toroidal Mirnov coils, because they are no data.
+  HF_Mirnov: ["KHP6T","LHP6T","KHP6N","LHP6N","KHP7T",
+    "LHP7T","KHP7N","LHP7N","KHP8T","LHP8T","KHP8N","LHP8N",]
+
+  # PCRL02, vacuum current + plasma current.
+  Plasma_Current: ["PCRL01", "PCRL02"]
+  Plasma_Center: ["lmsr", "lmsz"]
+  Ip_mag: ["IPM", "east"]
+
+  IpRef: ["LMTIPREF"]
+  BT0: ["pcit"]
+
+  energy: ["taue_dia", "taue_mhd", "tau_98", "tau_89", "H98_dia", "H89_dia",
+    "H98_mhd", "H89_mhd"]
+
+  # Added on 2025-12-28
+  DiaLoops_raw: ["Diaop1a", "Diaop1b", "Diaop1c", "Diaop2a", "Diaop2b",
+    "Diaop2c", "Diahi1", "Diahi2"]
+
+  # Added on 2025-12-28
+  DivProb_raw: ["UIIS01", "UIIS02", "UIIS03", "UIIS04", "UIIS05", "UIIS06",
+    "UIIS07", "UIIS08", "UIIS09", "UIIS10", "UIIS11", "UIIS12", "UIIS13",
+    "UIIS14", "UIIS15", "UIIS16", "UIIS17", "UIIS18", "UIIS19", "UIIS20",
+    "UIIS21", "UIIS22", "UIIS23", "UIIS24", "UIIS25", "UIIS26", "UIIS27",
+    "UIIS28",
+    "UIVP01", "UIVP02", "UIVP03", "UIVP04", "UIVP05", "UIVP06", "UIVP07",
+    "UIVP08", "UIVP09", "UIVP10", "UIVP11", "UIVP12", "UIVP13", "UIVP14",
+    "UIVP15", "UIVP16", "UIVP17", "UIVP18", "UIVP19", "UIVP20", "UIVP21",
+    "UIVP22", "UIVP23", "UIVP24", "UIVP25", "UIVP26", "UIVP27", "UIVP28",
+    "UIVF01", "UIVF02", "UIVF03", "UIVF04", "UIVF05", "UIVF06", "UIVF07",
+    "UIVF08", "UIVF09", "UIVF10", "UIVF11", "UIVF12", "UIVF13", "UIVF14",
+    "UIVF15", "UIVF16", "UIVF17", "UIVF18", "UIVF19", "UIVF20", "UIVF21",
+    "UIVF22", "UIVF23", "UIVF24", "UIVF25", "UIVF26", "UIVF27", "UIVF28",
+    "UOIS01", "UOIS02", "UOIS03", "UOIS04", "UOIS05", "UOIS06", "UOIS07",
+    "UOIS08", "UOIS09", "UOIS10", "UOIS11", "UOIS12", "UOIS13", "UOIS14",
+    "UOIS15", "UOIS16", "UOIS17", "UOIS18", "UOIS19", "UOIS20", "UOIS21",
+    "UOIS22", "UOIS23", "UOIS24", "UOIS25", "UOIS26",
+    "UOVP01", "UOVP02", "UOVP03", "UOVP04", "UOVP05", "UOVP06", "UOVP07",
+    "UOVP08", "UOVP09", "UOVP10", "UOVP11", "UOVP12", "UOVP13", "UOVP14",
+    "UOVP15", "UOVP16", "UOVP17", "UOVP18", "UOVP19", "UOVP20", "UOVP21",
+    "UOVP22", "UOVP23", "UOVP24", "UOVP25", "UOVP26",
+    "UOVF01", "UOVF02", "UOVF03", "UOVF04", "UOVF05", "UOVF06", "UOVF07",
+    "UOVF08", "UOVF09", "UOVF10", "UOVF11", "UOVF12", "UOVF13", "UOVF14",
+    "UOVF15", "UOVF16", "UOVF17", "UOVF18", "UOVF19", "UOVF20", "UOVF21",
+    "UOVF22", "UOVF23", "UOVF24", "UOVF25", "UOVF26",
+    "LIIS01", "LIIS02", "LIIS03", "LIIS04", "LIIS05", "LIIS06", "LIIS07",
+    "LIIS08", "LIIS09", "LIIS10", "LIIS11", "LIIS12", "LIIS13", "LIIS14",
+    "LIIS15",
+    "LIVP01", "LIVP02", "LIVP03", "LIVP04", "LIVP05", "LIVP06", "LIVP07",
+    "LIVP08", "LIVP09", "LIVP10", "LIVP11", "LIVP12", "LIVP13", "LIVP14",
+    "LIVP15",
+    "LIVF01", "LIVF02", "LIVF03", "LIVF04", "LIVF05", "LIVF06", "LIVF07",
+    "LIVF08", "LIVF09", "LIVF10", "LIVF11", "LIVF12", "LIVF13", "LIVF14",
+    "LIVF15",
+    "LOIS01", "LOIS02", "LOIS03", "LOIS04", "LOIS05", "LOIS06", "LOIS07",
+    "LOIS08", "LOIS09", "LOIS10", "LOIS11", "LOIS12", "LOIS13", "LOIS14",
+    "LOIS15", "LOIS16", "LOIS17", "LOIS18", "LOIS19", "LOIS20",
+    "LOVP01", "LOVP02", "LOVP03", "LOVP04", "LOVP05", "LOVP06", "LOVP07",
+    "LOVP08", "LOVP09", "LOVP10", "LOVP11", "LOVP12", "LOVP13", "LOVP14",
+    "LOVP15", "LOVP16", "LOVP17", "LOVP18", "LOVP19", "LOVP20",
+    "LOVF01", "LOVF02", "LOVF03", "LOVF04", "LOVF05", "LOVF06", "LOVF07",
+    "LOVF08", "LOVF09", "LOVF10", "LOVF11", "LOVF12", "LOVF13", "LOVF14",
+    "LOVF15", "LOVF16", "LOVF17", "LOVF18", "LOVF19", "LOVF20"]
+
+  # quench_list is CCR + PF_diff_v
+  # CCRIP: 磁体电流变化率 # CCR1-14: PF 电流变化率, 失超相关
+  CCR: ["CCR1", "CCR2", "CCR3", "CCR4", "CCR5", "CCR6", "CCR7", "CCR8",
+    "CCR11", "CCR12", "CCR13", "CCR14", "CCRIP"]
+  # PF differential Voltage: PF线圈差分电压，即没有任何补偿的实际电压，失超相关
+  PF_diff_v: ["PF101Y", "PF102Y", "PF201Y", "PF202Y", "PF301Y", "PF302Y", "PF401Y",
+    "PF402Y", "PF501Y","PF502Y", "PF601Y", "PF602Y", "PF701Y", "PF702Y",
+    "PF703Y", "PF801Y", "PF802Y", "PF803Y", "PF1101Y", "PF1102Y",
+    "PF1201Y", "PF1202Y", "PF1301Y", "PF1302Y", "PF1401Y", "PF1402Y"]
+
+  ## add by wan 2024-01-24
+  efit_nodes: ["AMINOR","AREA","ATIME","BCENTR","BDRY","BETAN","BETAT","BETAP",
+    "BT0","EFIT_MFILE:CCBRSP","CHISQ","CCHISQ","CERROR","EFIT_MFILE:CMPR2",
+    "EFIT_MFILE:CPASMA","EFIT_MFILE:CSILOP","CZMAXI","ERROR","EFIT_MFILE:EXPMPI",
+    "EFIT_MFILE:FCURRT", "FFPRIM","FPOL","EFIT_MFILE:FWTFC","EFIT_MFILE:FWTMP2",
+    "EFIT_MFILE:FWTSI","GAPBOT","GAPIN","GAPOUT","GAPTOP","GTIME","KAPPA","LI","LIM","LIMITR",
+    "NBDRY","NINDX","EFIT_MFILE:PLASMA","PPRIME","PSIREF","PSIRZ",
+    "Q0","Q95","QL","QPSI","QSTAR","R","RBCENT","RCUR","RMAXIS",
+    "RSURF","RVSIN","RVSOUT","RXPT1","RXPT2","EFIT_MFILE:SAIMPI","EFIT_MFILE:SAISIL","EFIT_MFILE:SILOPT","SSIBRY",
+    "SSIMAG","TIME","TRIBOT","TRITOP","VOLUME","WMHD","XRSP","Z","ZCUR","ZMAXIS","ZSURF","ZVSIN","ZVSOUT","ZXPT1",
+    "ZXPT2"]
+  # shape paramaters export from efit R,Z
+  efit_shape_params: ["R8", "Z8", "rsurf", "zsurf", "aminor","bminor", "elong",
+    "triu", "tril", "squo", "squi", "sqli", "sqlo"]
+
+  efit_key_D0_params: ["LI", "BETAN","BETAT","BETAP", "KAPPA","WMHD","Q0","Q95", "AMINOR"]
+  # import efit control params
+  # elongation,
+  efit_control_params: ["R8", "Z8", "rsurf", "zsurf", "aminor","bminor", "elong",
+    "triu", "tril", "squo", "squi", "sqli", "sqlo", "GAPBOT", "GAPIN",
+    "GAPOUT", "GAPTOP", "RXPT1", "RXPT2", "ZXPT1", "ZXPT2"]
+
+  ## added by wan 2024-03-08
+  ### `LIM` is X, Y of limiter, `LIMITR` number of limiter points
+  ### EXPMPI, FCURRT the measured probe data is not included
+  efit_exclude_nodes: ["BT0", "CCHISQ", "EFIT_MFILE:FWTFC", "CERROR", "CZMAXI",
+    "EFIT_MFILE:EXPMPI","EFIT_MFILE:FCURRT", "XRSP", "TIME",
+    "ATIME", "LIM", "LIMITR", "R", "Z",
+    ]
+
+  # Added on 2025-12-28
+  SoftX_raw: ["SXR7V","SXR8V","SXR9V","SXR10V","SXR11V","SXR12V","SXR13V",
+    "SXR14V","SXR15V","SXR16V","SXR17V","SXR18V","SXR19V","SXR20V",
+    "SXR21V","SXR22V","SXR23V","SXR24V","SXR25V","SXR26V","SXR27V",
+    "SXR28V","SXR29V","SXR30V", "SXR1U","SXR2U","SXR3U","SXR4U","SXR5U",
+    "SXR6U","SXR7U","SXR8U","SXR9U","SXR10U","SXR11U","SXR12U","SXR13U",
+    "SXR14U","SXR15U","SXR16U","SXR17U","SXR18U","SXR19U","SXR20U",
+    "SXR21U","SXR22U","SXR23U","SXR24U","SXR25U","SXR26U","SXR27U",
+    "SXR28U","SXR29U","SXR30U","SXR31U","SXR32U","SXR33U","SXR34U",
+    "SXR35U","SXR36U","SXR37U","SXR38U","SXR39U","SXR40U","SXR41U",
+    "SXR42U","SXR43U","SXR44U","SXR45U","SXR46U", "SXR1D","SXR2D","SXR3D",
+    "SXR4D","SXR5D","SXR6D","SXR7D","SXR8D","SXR9D","SXR10D","SXR11D",
+    "SXR12D","SXR13D","SXR14D","SXR15D","SXR16D","SXR17D","SXR18D",
+    "SXR19D","SXR20D","SXR21D","SXR22D","SXR23D","SXR24D","SXR25D",
+    "SXR26D","SXR27D","SXR28D","SXR29D","SXR30D","SXR31D","SXR32D",
+    "SXR33D","SXR34D","SXR35D","SXR36D","SXR37D","SXR38D","SXR39D",
+    "SXR40D","SXR41D","SXR42D","SXR43D"]
+
+  Flux_vloops: ["VP1", "VP2", "VP3", "VP4", "VP5"]
+
+  Flux_loops: ["FL1A","FL2A","FL3A","FL4A","FL5A","FL6A","FL7A","FL8A",
+    "FL9A","FL10A","FL11A","FL12A","FL13A","FL14A","FL15A","FL16A","FL17A",
+    "FL18A","FL19A","FL20A","FL21A","FL22A","FL23A","FL24A","FL25A",
+    "FL26A","FL27A","FL28A","FL29A","FL30A","FL31A","FL32A","FL33A",
+    "FL34A","FL35A",
+    "FL1B","FL2B","FL3B","FL4B","FL5B","FL6B","FL7B","FL8B","FL9B","FL10B",
+    "FL11B","FL12B","FL13B","FL14B","FL15B","FL16B","FL17B","FL18B","FL19B",
+    "FL20B","FL21B","FL22B","FL23B","FL24B","FL25B","FL26B","FL27B","FL28B",
+    "FL29B","FL30B","FL31B","FL32B","FL33B","FL34B","FL35B"]
+
+  PF_measurments: ["PF1P", "PF2P", "PF3P", "PF4P", "PF5P", "PF6P", 
+    "PF7P", "PF8P", "PF9P", "PF10P", "PF11P", "PF12P"]
+
+dir_infos:
+  Da:
+    node_list: ["Deuterium_alpha"]
+    type: east
+
+  EnergyRaw:
+    node_list: ["energy"]
+    type: raw
+
+  DiaLoopsDiag:
+    node_list: ["DiaLoops_raw"]
+    type: diagnostic
+
+  DivProb:
+    node_list: ["DivProb_raw"]
+    type: east
+
+  EAST:
+    node_list: ["IC1_received", 
+      "NBI", "ICRH", "ECRH", "LHW", "PICRH", "PECRH",
+      "fueling_signals", "EAST_D0", 
+      "Flux_vloops", 
+      "Flux_loops", "PF_measurments"]
+    type: east
+  
+  PCSEASTRaw:
+    node_list: ["pcs_nodes.yml"]
+    type: raw
+
+  EFIT:
+    node_list: ["efit_nodes"]
+    type: efit
+
+  RTEFIT:
+    node_list: ["efit_nodes"]
+    type: rtefit
+
+  GASDiag:
+    node_list: ["GAS"]
+    type: diagnostic
+
+  HCNDiag:
+    node_list: ["HCN"]
+    type: diagnostic
+
+  HRSDiag:
+    node_list: ["HRS_raw"]
+    type: diagnostic
+
+  IpRefDiag:
+    node_list: ["IpRef"]
+    type: diagnostic
+
+  Mirnov:
+    node_list: ["HF_Mirnov"]
+    type: east
+
+  POINTNFDiag:
+    node_list: ["POINT_N", "POINT_F"]
+    type: diagnostic
+
+  Quench:
+    node_list: ["CCR", "PF_diff_v"]
+    type: east
+
+  SoftX:
+    node_list: ["SoftX_raw"]
+    type: east
+
+  TeiRaw:
+    node_list: ["Tei"]
+    type: raw
+
+  VBMSDiag:
+    node_list: ["VBMS_raw"]
+    type: diagnostic
+
+  Vt0Raw:
+    node_list: ["Vt0"]
+    type: raw
+
+  PradRaw:
+    node_list: ["Prad_full"]
+    type: raw
+
+
+base_dir: $DATABASE_PATH/DataBase

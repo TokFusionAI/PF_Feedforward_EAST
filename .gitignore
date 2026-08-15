@@ -1,0 +1,38 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Numba cache (freegs4e / freegsnke)
+.numba_cache/
+
+# Environments
+.venv/
+venv/
+.env
+
+# Editors / OS
+.DS_Store
+*.swp
+*~
+.ipynb_checkpoints/
+
+# Regenerable training outputs (keep the shipped checkpoints! see allow rules below)
+**/events.out.tfevents.*
+**/tb/
+*.log.tmp
+
+# Large regenerable artifacts — the two paper checkpoints below are force-added
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+# allow-list: shipped paper artifacts
+!results/igbt_ablation/transformer_bidir_on/transformer_bidir_on_igbt_s44/checkpoints/best_val.pt
+!results/betan_ablation/transformer_bidir_on/transformer_bidir_on_betan_s44/checkpoints/best_val.pt
+!meta/**/*.npz
+!results/**/*.npz
+!meta/**/*.parquet

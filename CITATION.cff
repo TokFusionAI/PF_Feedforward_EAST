@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "PF-Feedforward-EAST: imitation learning for feedforward coil current trajectory design on EAST"
+message: "If you use this repository, please cite it using the metadata below."
+type: software
+authors:
+  - family-names: Lu
+    given-names: Jingjing
+repository-code: "https://github.com/TokFusionAI/PF_Feedforward_EAST"
+url: "https://github.com/TokFusionAI/PF_Feedforward_EAST"
+abstract: >-
+  Behavioral-cloning pipeline that maps a prescribed EAST plasma-boundary
+  evolution to the 12 independent pre-programmed PF coil-current
+  trajectories, with operational-constraint filtering and free-boundary
+  Grad-Shafranov (FreeGSNKE) equilibrium validation.
+license: MIT
+keywords:
+  - EAST
+  - poloidal field coils
+  - feedforward current design
+  - imitation learning
+  - behavioral cloning
+  - transformer
+  - plasma shape control
+  - FreeGSNKE
+  - tokamak

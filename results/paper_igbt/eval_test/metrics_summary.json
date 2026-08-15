@@ -1,0 +1,84 @@
+{
+  "n_test_shots": 2129,
+  "overall_r2": 0.9467132125427422,
+  "overall_mae_kA": 0.7578460574150085,
+  "overall_rmse_kA": 1.1598807573318481,
+  "r2_per_channel": [
+    0.8901625715317384,
+    0.8830185303965035,
+    0.8270162597691799,
+    0.8648480597317512,
+    0.8034442837313598,
+    0.754159628745765,
+    0.909680062747189,
+    0.9110238675389051,
+    0.9593011811086216,
+    0.9694476577366784,
+    0.7736999401634744,
+    0.8726907482168123
+  ],
+  "r2_median": 0.8778546393066579,
+  "loss_kA2_median": 0.9402114041149615,
+  "loss_kA2_mean": 1.3704729262793744,
+  "amp_violation_rate_mean": 2.552739600138869e-06,
+  "didt_violation_rate_pred_4kAs_mean": 0.06209018769535714,
+  "didt_violation_rate_truth_4kAs_mean": 0.07384775431177792,
+  "didt_violation_rate_pred_P99_mean": 0.004348244786754099,
+  "didt_violation_rate_truth_P99_mean": 0.005994295535489301,
+  "didt_violation_rate_pred_P99_9_mean": 0.0005777566957309352,
+  "didt_violation_rate_truth_P99_9_mean": 0.00026232588072116694,
+  "didt_PHASE_max": {
+    "pred_overall": 0.00013576961574393432,
+    "truth_overall": 0.0,
+    "pred_per_phase": {
+      "ramp_up": 2.30247101188996e-06,
+      "flat_top": 7.601683476606645e-05,
+      "ramp_down": 0.0014295375527174493
+    },
+    "truth_per_phase": {
+      "ramp_up": 0.0,
+      "flat_top": 0.0,
+      "ramp_down": 0.0
+    }
+  },
+  "didt_PHASE_P99_9": {
+    "pred_overall": 0.0005319724718643574,
+    "truth_overall": 0.000380219052784808,
+    "pred_per_phase": {
+      "ramp_up": 7.150627988911635e-05,
+      "flat_top": 0.00034323417383459655,
+      "ramp_down": 0.004349608952708999
+    },
+    "truth_per_phase": {
+      "ramp_up": 0.00017964914338722447,
+      "flat_top": 0.0004843612636490943,
+      "ramp_down": 0.00020260648489864083
+    }
+  },
+  "didt_PHASE_P99": {
+    "pred_overall": 0.00433540579711757,
+    "truth_overall": 0.008027404008732102,
+    "pred_per_phase": {
+      "ramp_up": 0.0013954443720848404,
+      "flat_top": 0.004177458821617674,
+      "ramp_down": 0.012051606561940051
+    },
+    "truth_per_phase": {
+      "ramp_up": 0.0017690916583317448,
+      "flat_top": 0.00990288224336526,
+      "ramp_down": 0.0043159344004811365
+    }
+  },
+  "dt_buckets": [
+    {
+      "bucket": "[0.08,0.13)",
+      "n_shots": 202,
+      "loss_median": 0.6425501704540648
+    },
+    {
+      "bucket": "[0.13,0.30)",
+      "n_shots": 1889,
+      "loss_median": 0.9491706019174969
+    }
+  ]
+}

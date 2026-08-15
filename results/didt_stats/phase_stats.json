@@ -1,0 +1,19 @@
+{
+  "ramp_up": {
+    "n_shots_with": 26449,
+    "n_steps": 4386108,
+    "t_total_s": 33531.50300000062
+  },
+  "flat_top": {
+    "n_shots_with": 26515,
+    "n_steps": 24720720,
+    "t_total_s": 218122.1300000088
+  },
+  "ramp_down": {
+    "n_shots_with": 22459,
+    "n_steps": 2866452,
+    "t_total_s": 21895.48799999974
+  },
+  "total_shots_ok": 26638,
+  "total_shots_err": 0
+}

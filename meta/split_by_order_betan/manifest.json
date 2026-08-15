@@ -1,0 +1,51 @@
+{
+  "name": "split_by_order_betan",
+  "purpose": "cross-β_N-mode (∥time, 防泄漏) leave-one-mode-out: 低β_N训→高β_N测 (外推高压强)",
+  "base_split": "meta/split_by_order_igbt (干净时序, 无泄漏)",
+  "betan_source": "EFIT BETAN 放电均值 (extract_betan_per_shot.py)",
+  "betan_cut": 0.8,
+  "design": {
+    "train": "igbt_train ∩ {β_N < 0.8} 低β_N早期",
+    "val": "igbt_val ∩ {β_N < 0.8} 低β_N中期(与train同模式)",
+    "test": "igbt_test ∩ {β_N > 0.8} 高β_N晚期 held-out模式"
+  },
+  "no_leakage": {
+    "train_max_shot": 152761,
+    "val_min_shot": 152777,
+    "test_min_shot": 156434,
+    "note": "train max < val min < test min, 硬时间边界; β_N 区间不相交 (train<CUT < test>CUT)"
+  },
+  "betan_separation": {
+    "train_median": 0.5057220851764297,
+    "train_range": [
+      0.05487495471133931,
+      0.7999571897002759
+    ],
+    "test_median": 0.9574534154251819,
+    "test_range": [
+      0.8000155367544692,
+      1.490639058015282
+    ]
+  },
+  "counts": {
+    "train": 8048,
+    "val": 1022,
+    "test": 931
+  },
+  "ranges": {
+    "train": [
+      117383,
+      152761
+    ],
+    "val": [
+      152777,
+      156389
+    ],
+    "test": [
+      156434,
+      159876
+    ]
+  },
+  "norm_stats": "meta/split_by_order_betan/norm_stats_notime.npz (在train上重算, 19维notime)",
+  "note": "β_N⊥Ip(Pearson≈0.07) → 与Ip实验是不同模式轴; β_N近⊥时间(弱漂移), ∥时间靠阈值筛选凑出β_N分离(防泄漏)."
+}

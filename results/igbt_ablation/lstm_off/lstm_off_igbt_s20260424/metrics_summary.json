@@ -1,0 +1,84 @@
+{
+  "n_test_shots": 2129,
+  "overall_r2": 0.9104057046799151,
+  "overall_mae_kA": 0.9472050070762634,
+  "overall_rmse_kA": 1.50398588180542,
+  "r2_per_channel": [
+    0.7900519085870366,
+    0.7804084044342786,
+    0.7485027918549695,
+    0.8527431683895397,
+    0.6530513922020467,
+    0.5350930880963574,
+    0.8354615448755847,
+    0.8220477959081616,
+    0.9331650272827898,
+    0.9454025835435599,
+    0.7631655640545965,
+    0.8074355939089002
+  ],
+  "r2_median": 0.7987437512479684,
+  "loss_kA2_median": 1.5265089155088931,
+  "loss_kA2_mean": 2.2985012895210266,
+  "amp_violation_rate_mean": 0.0,
+  "didt_violation_rate_pred_4kAs_mean": 0.05624786907871202,
+  "didt_violation_rate_truth_4kAs_mean": 0.07384775431177792,
+  "didt_violation_rate_pred_P99_mean": 0.003400999371538032,
+  "didt_violation_rate_truth_P99_mean": 0.005994295535489301,
+  "didt_violation_rate_pred_P99_9_mean": 0.0002181606267416611,
+  "didt_violation_rate_truth_P99_9_mean": 0.00026232588072116694,
+  "didt_PHASE_max": {
+    "pred_overall": 1.1382206518787737e-05,
+    "truth_overall": 0.0,
+    "pred_per_phase": {
+      "ramp_up": 0.0,
+      "flat_top": 1.047749340164128e-05,
+      "ramp_down": 0.00016439643024894317
+    },
+    "truth_per_phase": {
+      "ramp_up": 0.0,
+      "flat_top": 0.0,
+      "ramp_down": 0.0
+    }
+  },
+  "didt_PHASE_P99_9": {
+    "pred_overall": 0.00017023927024953955,
+    "truth_overall": 0.000380219052784808,
+    "pred_per_phase": {
+      "ramp_up": 0.00020421071349427663,
+      "flat_top": 0.00013448884380917945,
+      "ramp_down": 0.0006768305412034863
+    },
+    "truth_per_phase": {
+      "ramp_up": 0.00017964914338722447,
+      "flat_top": 0.0004843612636490943,
+      "ramp_down": 0.00020260648489864083
+    }
+  },
+  "didt_PHASE_P99": {
+    "pred_overall": 0.002187134334718425,
+    "truth_overall": 0.008027404008732102,
+    "pred_per_phase": {
+      "ramp_up": 0.0023740139150498865,
+      "flat_top": 0.001796122195667471,
+      "ramp_down": 0.004262937365332856
+    },
+    "truth_per_phase": {
+      "ramp_up": 0.0017690916583317448,
+      "flat_top": 0.00990288224336526,
+      "ramp_down": 0.0043159344004811365
+    }
+  },
+  "dt_buckets": [
+    {
+      "bucket": "[0.08,0.13)",
+      "n_shots": 202,
+      "loss_median": 0.8280364904314481
+    },
+    {
+      "bucket": "[0.13,0.30)",
+      "n_shots": 1889,
+      "loss_median": 1.567251236074501
+    }
+  ]
+}

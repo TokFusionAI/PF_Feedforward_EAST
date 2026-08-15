@@ -1,0 +1,55 @@
+# Secondary (derived) parameter extraction configuration
+# Used by ExtractEASTParams, ExtractPCSParams, ExtractEFITParams
+
+# --- EAST input power (ExtractEASTParams) ---
+input_power:
+  OHM_nodes: ["PCRL01", "VP1"]
+  NBI_nodes: ["NBI1LHV", "NBI1LHI", "NBI1RHV", "NBI1RHI",
+    "NBI2LHV", "NBI2LHI", "NBI2RHV", "NBI2RHI"]
+  ICRHI_nodes: ["PICRF1I", "PICRF2I", "PICRF3I", "PICRF4I",
+    "PICRF5I", "PICRF6I", "PICRF7I", "PICRF8I"]
+  ICRHR_nodes: ["PICRF1R", "PICRF2R", "PICRF3R", "PICRF4R",
+    "PICRF5R", "PICRF6R", "PICRF7R", "PICRF8R"]
+  # PECRH{x}I lacks maintenace, update to ECRHs * factor.  
+  # PECRH_nodes: ["PECRH1I", "PECRH2I", "PECRH3I", "PECRH4I"]
+  PECRH_nodes: ["ECRH1", "ECRH2", "ECRH3", "ECRH4"]
+  PLHW_nodes: ["PLHI1", "PLHR1", "PLHI2", "PLHR2"]
+  absorption_factors:
+    NBI: 0.55
+    LHW: 0.75
+    ECRH: 0.9
+    ICRH:
+      default: 0.85
+      boundary_shot: 97200   # shots <= boundary use low value
+      low: 0.5
+  # output keys saved to ext_params_dict
+  output_keys: ["sum_OHM", "sum_inject_PNBI", "sum_inject_PLHW",
+    "sum_inject_PICRH", "sum_inject_PECRH",
+    "abso_NBI_factor", "abso_LHW_factor", "abso_ICRH_factor", "abso_ECRH_factor",
+    "aux_sum_valid_power",
+    "inject_PNBIs", "inject_PLHWs", "inject_PICRHs", "inject_PECRHs"]
+  dir: "EAST"
+
+# --- PCS parameters (ExtractPCSParams) ---
+greenwald:
+  # nodes: [Ip (A), ne (10^19 m^{-3}), aminor (m)]
+  nodes: ["PCRL01", "DFSDEV", "PFSAMINOR"]
+  output_keys: ["nG", "fG"]
+  dir: "PCSEASTRaw"
+
+trip_product:
+  nodes: ["DFSDEV", "taue_mhd", "Ti0_TXCS"]
+  output_keys: ["ntT"]
+  dir: "PCSEASTRaw"
+
+computed_tauE:
+  nodes: ["PFSWMHD"]
+  output_keys: ["computed_taue"]
+  dir: "PCSEASTRaw"
+
+# --- EFIT shape parameters (ExtractEFITParams) ---
+efit_shape:
+  source_nodes: ["BDRY", "NBDRY"]
+  output_keys: ["R8", "Z8", "rsurf", "zsurf", "aminor", "bminor", "elong",
+    "triu", "tril", "squo", "squi", "sqli", "sqlo"]
+  dir: "EFIT"
