@@ -1,0 +1,24 @@
+# Core numerics / data
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+h5py>=3.8
+
+# Deep learning
+torch>=2.2
+
+# Plotting
+matplotlib>=3.7
+
+# Config handling
+PyYAML>=6.0
+pydantic-settings>=2.0
+
+# Misc
+tqdm>=4.66
+tensorboard>=2.15          # only for loss-curve figures (paper_*/plot_figures.py)
+
+# Equilibrium validation (optional — install when running the FreeGSNKE stage):
+#   pip install "freegsnke[freegs4e]"
+# EAST data access (optional — only when rebuilding the dataset from MDSplus):
+#   pip install MDSplus

@@ -1,0 +1,43 @@
+exp_name: lstm_on
+seed: 20260424
+data:
+  dataset_root: /data/PF_ATIME_dataset
+  train_shots: meta/split_by_order_betan/train_shots.txt
+  val_shots: meta/split_by_order_betan/val_shots.txt
+  test_shots: meta/split_by_order_betan/test_shots.txt
+  norm_stats: meta/split_by_order_betan/norm_stats_notime.npz
+  T_max: 128
+  num_workers: 6
+  pin_memory: true
+  prefetch_factor: 4
+  persistent_workers: true
+model:
+  name: lstm
+  pe_mode: time
+  d_state: 19
+  d_action: 12
+  d_model: 256
+  dropout: 0.1
+  T_max: 128
+  pe_base_period_s: 20.0
+  n_layers: 2
+optim:
+  lr: 0.0003
+  weight_decay: 0.01
+  betas:
+  - 0.9
+  - 0.95
+  grad_clip: 1.0
+  amp_dtype: bf16
+  epochs: 60
+  batch_per_rank: 32
+  scheduler: onecycle
+  warmup_pct: 0.05
+log:
+  out_root: results/betan_ablation/lstm_on
+  tb_dir: results/betan_ablation/lstm_on/tb
+  log_every: 50
+  save_every_epoch: 5
+ddp:
+  backend: nccl
+  find_unused_parameters: false

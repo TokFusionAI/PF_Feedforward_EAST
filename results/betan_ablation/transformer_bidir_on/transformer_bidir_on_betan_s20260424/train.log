@@ -1,0 +1,186 @@
+2026-07-14 11:33:56,993 [r0] INFO world=8 rank=0 local_rank=0 device=cuda:0
+2026-07-14 11:33:56,993 [r0] INFO cfg=
+{'exp_name': 'transformer_bidir_on', 'seed': 20260424, 'data': {'dataset_root': '/data/PF_ATIME_dataset', 'train_shots': 'meta/split_by_order_betan/train_shots.txt', 'val_shots': 'meta/split_by_order_betan/val_shots.txt', 'test_shots': 'meta/split_by_order_betan/test_shots.txt', 'norm_stats': 'meta/split_by_order_betan/norm_stats_notime.npz', 'T_max': 128, 'num_workers': 6, 'pin_memory': True, 'prefetch_factor': 4, 'persistent_workers': True}, 'model': {'name': 'transformer', 'pe_mode': 'time', 'd_state': 19, 'd_action': 12, 'd_model': 256, 'dropout': 0.1, 'T_max': 128, 'pe_base_period_s': 20.0, 'causal': False, 'n_layers': 6, 'n_heads': 8, 'd_ff': 1024}, 'optim': {'lr': 0.0003, 'weight_decay': 0.01, 'betas': [0.9, 0.95], 'grad_clip': 1.0, 'amp_dtype': 'bf16', 'epochs': 60, 'batch_per_rank': 32, 'scheduler': 'onecycle', 'warmup_pct': 0.05}, 'log': {'out_root': 'results/betan_ablation/transformer_bidir_on', 'tb_dir': 'results/betan_ablation/transformer_bidir_on/tb', 'log_every': 50, 'save_every_epoch': 5}, 'ddp': {'backend': 'nccl', 'find_unused_parameters': False}}
+2026-07-14 11:33:56,993 [r0] INFO torch=2.4.1
+2026-07-14 11:33:56,996 [r0] INFO train batches/epoch=31  val batches=4  train_size=8048  val_size=1022
+2026-07-14 11:33:57,081 [r0] INFO model parameters: 4,746,764
+2026-07-14 11:34:01,646 [r0] INFO epoch 0 step 0/31  loss=1.8657  lr=1.21e-05
+2026-07-14 11:34:08,558 [r0] INFO epoch 0 train avg_loss=1.1568  elapsed=9.4s
+2026-07-14 11:34:10,567 [r0] INFO epoch 0 VAL loss=0.5760 R^2_med=0.5082 amp_v=0.0003 didt_v=0.4129
+2026-07-14 11:34:11,177 [r0] INFO epoch 1 step 0/31  loss=0.5843  lr=8.98e-05
+2026-07-14 11:34:20,723 [r0] INFO epoch 1 train avg_loss=0.3191  elapsed=10.0s
+2026-07-14 11:34:21,029 [r0] INFO epoch 1 VAL loss=0.2812 R^2_med=0.7482 amp_v=0.0000 didt_v=0.2348
+2026-07-14 11:34:21,602 [r0] INFO epoch 2 step 0/31  loss=0.1486  lr=2.35e-04
+2026-07-14 11:34:31,152 [r0] INFO epoch 2 train avg_loss=0.1755  elapsed=10.1s
+2026-07-14 11:34:31,461 [r0] INFO epoch 2 VAL loss=0.2393 R^2_med=0.7607 amp_v=0.0000 didt_v=0.1975
+2026-07-14 11:34:32,033 [r0] INFO epoch 3 step 0/31  loss=0.1668  lr=3.00e-04
+2026-07-14 11:34:41,582 [r0] INFO epoch 3 train avg_loss=0.1376  elapsed=10.1s
+2026-07-14 11:34:41,881 [r0] INFO epoch 3 VAL loss=0.1910 R^2_med=0.8322 amp_v=0.0000 didt_v=0.1827
+2026-07-14 11:34:42,425 [r0] INFO epoch 4 step 0/31  loss=0.1509  lr=3.00e-04
+2026-07-14 11:34:51,971 [r0] INFO epoch 4 train avg_loss=0.1060  elapsed=10.0s
+2026-07-14 11:34:52,275 [r0] INFO epoch 4 VAL loss=0.1644 R^2_med=0.8767 amp_v=0.0000 didt_v=0.1551
+2026-07-14 11:34:52,828 [r0] INFO epoch 5 step 0/31  loss=0.0832  lr=2.99e-04
+2026-07-14 11:35:02,378 [r0] INFO epoch 5 train avg_loss=0.0807  elapsed=10.0s
+2026-07-14 11:35:02,683 [r0] INFO epoch 5 VAL loss=0.1470 R^2_med=0.8781 amp_v=0.0000 didt_v=0.1393
+2026-07-14 11:35:03,285 [r0] INFO epoch 6 step 0/31  loss=0.0747  lr=2.98e-04
+2026-07-14 11:35:12,823 [r0] INFO epoch 6 train avg_loss=0.0707  elapsed=10.0s
+2026-07-14 11:35:13,125 [r0] INFO epoch 6 VAL loss=0.1454 R^2_med=0.8763 amp_v=0.0000 didt_v=0.1286
+2026-07-14 11:35:13,681 [r0] INFO epoch 7 step 0/31  loss=0.0680  lr=2.96e-04
+2026-07-14 11:35:23,224 [r0] INFO epoch 7 train avg_loss=0.0615  elapsed=10.0s
+2026-07-14 11:35:23,529 [r0] INFO epoch 7 VAL loss=0.1354 R^2_med=0.8951 amp_v=0.0000 didt_v=0.1162
+2026-07-14 11:35:24,084 [r0] INFO epoch 8 step 0/31  loss=0.0551  lr=2.94e-04
+2026-07-14 11:35:33,631 [r0] INFO epoch 8 train avg_loss=0.0526  elapsed=10.0s
+2026-07-14 11:35:33,938 [r0] INFO epoch 8 VAL loss=0.1198 R^2_med=0.9045 amp_v=0.0000 didt_v=0.1172
+2026-07-14 11:35:34,495 [r0] INFO epoch 9 step 0/31  loss=0.0529  lr=2.92e-04
+2026-07-14 11:35:44,040 [r0] INFO epoch 9 train avg_loss=0.0485  elapsed=10.0s
+2026-07-14 11:35:44,355 [r0] INFO epoch 9 VAL loss=0.1420 R^2_med=0.8768 amp_v=0.0000 didt_v=0.1075
+2026-07-14 11:35:44,839 [r0] INFO epoch 10 step 0/31  loss=0.0476  lr=2.89e-04
+2026-07-14 11:35:54,381 [r0] INFO epoch 10 train avg_loss=0.0469  elapsed=10.0s
+2026-07-14 11:35:54,693 [r0] INFO epoch 10 VAL loss=0.1231 R^2_med=0.8961 amp_v=0.0000 didt_v=0.1053
+2026-07-14 11:35:55,255 [r0] INFO epoch 11 step 0/31  loss=0.0531  lr=2.85e-04
+2026-07-14 11:36:04,796 [r0] INFO epoch 11 train avg_loss=0.0413  elapsed=10.0s
+2026-07-14 11:36:05,107 [r0] INFO epoch 11 VAL loss=0.1322 R^2_med=0.8991 amp_v=0.0000 didt_v=0.1026
+2026-07-14 11:36:05,598 [r0] INFO epoch 12 step 0/31  loss=0.0335  lr=2.82e-04
+2026-07-14 11:36:15,139 [r0] INFO epoch 12 train avg_loss=0.0398  elapsed=10.0s
+2026-07-14 11:36:15,446 [r0] INFO epoch 12 VAL loss=0.1217 R^2_med=0.9101 amp_v=0.0000 didt_v=0.0996
+2026-07-14 11:36:15,933 [r0] INFO epoch 13 step 0/31  loss=0.0299  lr=2.78e-04
+2026-07-14 11:36:25,468 [r0] INFO epoch 13 train avg_loss=0.0372  elapsed=10.0s
+2026-07-14 11:36:25,779 [r0] INFO epoch 13 VAL loss=0.1056 R^2_med=0.9158 amp_v=0.0000 didt_v=0.0984
+2026-07-14 11:36:26,343 [r0] INFO epoch 14 step 0/31  loss=0.0365  lr=2.73e-04
+2026-07-14 11:36:35,882 [r0] INFO epoch 14 train avg_loss=0.0329  elapsed=10.0s
+2026-07-14 11:36:36,185 [r0] INFO epoch 14 VAL loss=0.1192 R^2_med=0.8934 amp_v=0.0000 didt_v=0.0980
+2026-07-14 11:36:36,674 [r0] INFO epoch 15 step 0/31  loss=0.0305  lr=2.68e-04
+2026-07-14 11:36:46,214 [r0] INFO epoch 15 train avg_loss=0.0298  elapsed=10.0s
+2026-07-14 11:36:46,522 [r0] INFO epoch 15 VAL loss=0.1182 R^2_med=0.8971 amp_v=0.0000 didt_v=0.0923
+2026-07-14 11:36:47,076 [r0] INFO epoch 16 step 0/31  loss=0.0297  lr=2.63e-04
+2026-07-14 11:36:56,618 [r0] INFO epoch 16 train avg_loss=0.0310  elapsed=10.0s
+2026-07-14 11:36:56,925 [r0] INFO epoch 16 VAL loss=0.1146 R^2_med=0.8978 amp_v=0.0000 didt_v=0.0919
+2026-07-14 11:36:57,434 [r0] INFO epoch 17 step 0/31  loss=0.0328  lr=2.57e-04
+2026-07-14 11:37:06,973 [r0] INFO epoch 17 train avg_loss=0.0280  elapsed=10.0s
+2026-07-14 11:37:07,283 [r0] INFO epoch 17 VAL loss=0.1106 R^2_med=0.8988 amp_v=0.0000 didt_v=0.0945
+2026-07-14 11:37:07,779 [r0] INFO epoch 18 step 0/31  loss=0.0268  lr=2.51e-04
+2026-07-14 11:37:17,330 [r0] INFO epoch 18 train avg_loss=0.0261  elapsed=10.0s
+2026-07-14 11:37:17,637 [r0] INFO epoch 18 VAL loss=0.1127 R^2_med=0.9054 amp_v=0.0000 didt_v=0.0926
+2026-07-14 11:37:18,148 [r0] INFO epoch 19 step 0/31  loss=0.0239  lr=2.45e-04
+2026-07-14 11:37:27,687 [r0] INFO epoch 19 train avg_loss=0.0242  elapsed=10.0s
+2026-07-14 11:37:27,995 [r0] INFO epoch 19 VAL loss=0.1035 R^2_med=0.9141 amp_v=0.0000 didt_v=0.0928
+2026-07-14 11:37:28,553 [r0] INFO epoch 20 step 0/31  loss=0.0239  lr=2.38e-04
+2026-07-14 11:37:38,091 [r0] INFO epoch 20 train avg_loss=0.0265  elapsed=10.0s
+2026-07-14 11:37:38,401 [r0] INFO epoch 20 VAL loss=0.1054 R^2_med=0.9105 amp_v=0.0000 didt_v=0.0901
+2026-07-14 11:37:38,952 [r0] INFO epoch 21 step 0/31  loss=0.0259  lr=2.32e-04
+2026-07-14 11:37:48,498 [r0] INFO epoch 21 train avg_loss=0.0225  elapsed=10.0s
+2026-07-14 11:37:48,803 [r0] INFO epoch 21 VAL loss=0.1103 R^2_med=0.9003 amp_v=0.0000 didt_v=0.0908
+2026-07-14 11:37:49,295 [r0] INFO epoch 22 step 0/31  loss=0.0202  lr=2.25e-04
+2026-07-14 11:37:58,837 [r0] INFO epoch 22 train avg_loss=0.0225  elapsed=10.0s
+2026-07-14 11:37:59,146 [r0] INFO epoch 22 VAL loss=0.1070 R^2_med=0.9070 amp_v=0.0000 didt_v=0.0875
+2026-07-14 11:37:59,640 [r0] INFO epoch 23 step 0/31  loss=0.0253  lr=2.17e-04
+2026-07-14 11:38:09,182 [r0] INFO epoch 23 train avg_loss=0.0225  elapsed=10.0s
+2026-07-14 11:38:09,501 [r0] INFO epoch 23 VAL loss=0.1069 R^2_med=0.9046 amp_v=0.0000 didt_v=0.0901
+2026-07-14 11:38:10,001 [r0] INFO epoch 24 step 0/31  loss=0.0185  lr=2.10e-04
+2026-07-14 11:38:19,537 [r0] INFO epoch 24 train avg_loss=0.0204  elapsed=10.0s
+2026-07-14 11:38:19,852 [r0] INFO epoch 24 VAL loss=0.1018 R^2_med=0.9071 amp_v=0.0000 didt_v=0.0860
+2026-07-14 11:38:20,420 [r0] INFO epoch 25 step 0/31  loss=0.0186  lr=2.02e-04
+2026-07-14 11:38:29,958 [r0] INFO epoch 25 train avg_loss=0.0193  elapsed=10.0s
+2026-07-14 11:38:30,267 [r0] INFO epoch 25 VAL loss=0.1044 R^2_med=0.9102 amp_v=0.0000 didt_v=0.0862
+2026-07-14 11:38:30,829 [r0] INFO epoch 26 step 0/31  loss=0.0145  lr=1.94e-04
+2026-07-14 11:38:40,364 [r0] INFO epoch 26 train avg_loss=0.0191  elapsed=10.0s
+2026-07-14 11:38:40,671 [r0] INFO epoch 26 VAL loss=0.0982 R^2_med=0.9135 amp_v=0.0000 didt_v=0.0880
+2026-07-14 11:38:41,222 [r0] INFO epoch 27 step 0/31  loss=0.0207  lr=1.86e-04
+2026-07-14 11:38:50,764 [r0] INFO epoch 27 train avg_loss=0.0183  elapsed=10.0s
+2026-07-14 11:38:51,072 [r0] INFO epoch 27 VAL loss=0.1019 R^2_med=0.9073 amp_v=0.0000 didt_v=0.0876
+2026-07-14 11:38:51,562 [r0] INFO epoch 28 step 0/31  loss=0.0178  lr=1.78e-04
+2026-07-14 11:39:01,104 [r0] INFO epoch 28 train avg_loss=0.0179  elapsed=10.0s
+2026-07-14 11:39:01,409 [r0] INFO epoch 28 VAL loss=0.0944 R^2_med=0.9198 amp_v=0.0000 didt_v=0.0883
+2026-07-14 11:39:01,961 [r0] INFO epoch 29 step 0/31  loss=0.0186  lr=1.70e-04
+2026-07-14 11:39:11,498 [r0] INFO epoch 29 train avg_loss=0.0174  elapsed=10.0s
+2026-07-14 11:39:11,800 [r0] INFO epoch 29 VAL loss=0.0977 R^2_med=0.9149 amp_v=0.0000 didt_v=0.0844
+2026-07-14 11:39:12,305 [r0] INFO epoch 30 step 0/31  loss=0.0152  lr=1.62e-04
+2026-07-14 11:39:21,837 [r0] INFO epoch 30 train avg_loss=0.0170  elapsed=10.0s
+2026-07-14 11:39:22,139 [r0] INFO epoch 30 VAL loss=0.1027 R^2_med=0.9099 amp_v=0.0000 didt_v=0.0844
+2026-07-14 11:39:22,698 [r0] INFO epoch 31 step 0/31  loss=0.0191  lr=1.54e-04
+2026-07-14 11:39:32,245 [r0] INFO epoch 31 train avg_loss=0.0154  elapsed=10.0s
+2026-07-14 11:39:32,557 [r0] INFO epoch 31 VAL loss=0.0900 R^2_med=0.9236 amp_v=0.0000 didt_v=0.0843
+2026-07-14 11:39:33,111 [r0] INFO epoch 32 step 0/31  loss=0.0134  lr=1.45e-04
+2026-07-14 11:39:42,648 [r0] INFO epoch 32 train avg_loss=0.0158  elapsed=10.0s
+2026-07-14 11:39:42,952 [r0] INFO epoch 32 VAL loss=0.1024 R^2_med=0.9095 amp_v=0.0000 didt_v=0.0833
+2026-07-14 11:39:43,472 [r0] INFO epoch 33 step 0/31  loss=0.0170  lr=1.37e-04
+2026-07-14 11:39:53,008 [r0] INFO epoch 33 train avg_loss=0.0161  elapsed=10.1s
+2026-07-14 11:39:53,316 [r0] INFO epoch 33 VAL loss=0.0904 R^2_med=0.9252 amp_v=0.0000 didt_v=0.0875
+2026-07-14 11:39:53,809 [r0] INFO epoch 34 step 0/31  loss=0.0241  lr=1.29e-04
+2026-07-14 11:40:03,349 [r0] INFO epoch 34 train avg_loss=0.0158  elapsed=10.0s
+2026-07-14 11:40:03,657 [r0] INFO epoch 34 VAL loss=0.0913 R^2_med=0.9206 amp_v=0.0000 didt_v=0.0855
+2026-07-14 11:40:04,150 [r0] INFO epoch 35 step 0/31  loss=0.0137  lr=1.21e-04
+2026-07-14 11:40:13,689 [r0] INFO epoch 35 train avg_loss=0.0148  elapsed=10.0s
+2026-07-14 11:40:13,996 [r0] INFO epoch 35 VAL loss=0.1011 R^2_med=0.9095 amp_v=0.0000 didt_v=0.0851
+2026-07-14 11:40:14,550 [r0] INFO epoch 36 step 0/31  loss=0.0168  lr=1.13e-04
+2026-07-14 11:40:24,091 [r0] INFO epoch 36 train avg_loss=0.0142  elapsed=10.0s
+2026-07-14 11:40:24,396 [r0] INFO epoch 36 VAL loss=0.1000 R^2_med=0.9135 amp_v=0.0000 didt_v=0.0838
+2026-07-14 11:40:24,889 [r0] INFO epoch 37 step 0/31  loss=0.0117  lr=1.05e-04
+2026-07-14 11:40:34,426 [r0] INFO epoch 37 train avg_loss=0.0142  elapsed=10.0s
+2026-07-14 11:40:34,750 [r0] INFO epoch 37 VAL loss=0.0985 R^2_med=0.9159 amp_v=0.0000 didt_v=0.0841
+2026-07-14 11:40:35,263 [r0] INFO epoch 38 step 0/31  loss=0.0124  lr=9.69e-05
+2026-07-14 11:40:44,804 [r0] INFO epoch 38 train avg_loss=0.0137  elapsed=10.1s
+2026-07-14 11:40:45,111 [r0] INFO epoch 38 VAL loss=0.0968 R^2_med=0.9186 amp_v=0.0000 didt_v=0.0823
+2026-07-14 11:40:45,602 [r0] INFO epoch 39 step 0/31  loss=0.0179  lr=8.93e-05
+2026-07-14 11:40:55,142 [r0] INFO epoch 39 train avg_loss=0.0132  elapsed=10.0s
+2026-07-14 11:40:55,450 [r0] INFO epoch 39 VAL loss=0.0918 R^2_med=0.9211 amp_v=0.0000 didt_v=0.0821
+2026-07-14 11:40:55,949 [r0] INFO epoch 40 step 0/31  loss=0.0162  lr=8.18e-05
+2026-07-14 11:41:05,492 [r0] INFO epoch 40 train avg_loss=0.0133  elapsed=10.0s
+2026-07-14 11:41:05,796 [r0] INFO epoch 40 VAL loss=0.0941 R^2_med=0.9189 amp_v=0.0000 didt_v=0.0827
+2026-07-14 11:41:06,354 [r0] INFO epoch 41 step 0/31  loss=0.0138  lr=7.45e-05
+2026-07-14 11:41:15,890 [r0] INFO epoch 41 train avg_loss=0.0141  elapsed=10.0s
+2026-07-14 11:41:16,196 [r0] INFO epoch 41 VAL loss=0.0956 R^2_med=0.9133 amp_v=0.0000 didt_v=0.0825
+2026-07-14 11:41:16,690 [r0] INFO epoch 42 step 0/31  loss=0.0114  lr=6.75e-05
+2026-07-14 11:41:26,235 [r0] INFO epoch 42 train avg_loss=0.0122  elapsed=10.0s
+2026-07-14 11:41:26,545 [r0] INFO epoch 42 VAL loss=0.0906 R^2_med=0.9199 amp_v=0.0000 didt_v=0.0845
+2026-07-14 11:41:27,030 [r0] INFO epoch 43 step 0/31  loss=0.0104  lr=6.07e-05
+2026-07-14 11:41:36,570 [r0] INFO epoch 43 train avg_loss=0.0128  elapsed=10.0s
+2026-07-14 11:41:36,876 [r0] INFO epoch 43 VAL loss=0.0934 R^2_med=0.9189 amp_v=0.0000 didt_v=0.0819
+2026-07-14 11:41:37,371 [r0] INFO epoch 44 step 0/31  loss=0.0120  lr=5.42e-05
+2026-07-14 11:41:46,914 [r0] INFO epoch 44 train avg_loss=0.0120  elapsed=10.0s
+2026-07-14 11:41:47,229 [r0] INFO epoch 44 VAL loss=0.0945 R^2_med=0.9189 amp_v=0.0000 didt_v=0.0811
+2026-07-14 11:41:47,739 [r0] INFO epoch 45 step 0/31  loss=0.0110  lr=4.80e-05
+2026-07-14 11:41:57,276 [r0] INFO epoch 45 train avg_loss=0.0120  elapsed=10.0s
+2026-07-14 11:41:57,588 [r0] INFO epoch 45 VAL loss=0.0921 R^2_med=0.9192 amp_v=0.0000 didt_v=0.0820
+2026-07-14 11:41:58,160 [r0] INFO epoch 46 step 0/31  loss=0.0106  lr=4.21e-05
+2026-07-14 11:42:07,699 [r0] INFO epoch 46 train avg_loss=0.0121  elapsed=10.1s
+2026-07-14 11:42:08,006 [r0] INFO epoch 46 VAL loss=0.0914 R^2_med=0.9188 amp_v=0.0000 didt_v=0.0826
+2026-07-14 11:42:08,497 [r0] INFO epoch 47 step 0/31  loss=0.0105  lr=3.65e-05
+2026-07-14 11:42:18,038 [r0] INFO epoch 47 train avg_loss=0.0114  elapsed=10.0s
+2026-07-14 11:42:18,344 [r0] INFO epoch 47 VAL loss=0.0907 R^2_med=0.9199 amp_v=0.0000 didt_v=0.0815
+2026-07-14 11:42:18,844 [r0] INFO epoch 48 step 0/31  loss=0.0106  lr=3.13e-05
+2026-07-14 11:42:28,387 [r0] INFO epoch 48 train avg_loss=0.0114  elapsed=10.0s
+2026-07-14 11:42:28,692 [r0] INFO epoch 48 VAL loss=0.0927 R^2_med=0.9181 amp_v=0.0000 didt_v=0.0818
+2026-07-14 11:42:29,185 [r0] INFO epoch 49 step 0/31  loss=0.0121  lr=2.64e-05
+2026-07-14 11:42:38,728 [r0] INFO epoch 49 train avg_loss=0.0115  elapsed=10.0s
+2026-07-14 11:42:39,039 [r0] INFO epoch 49 VAL loss=0.0921 R^2_med=0.9185 amp_v=0.0000 didt_v=0.0810
+2026-07-14 11:42:39,533 [r0] INFO epoch 50 step 0/31  loss=0.0099  lr=2.19e-05
+2026-07-14 11:42:49,069 [r0] INFO epoch 50 train avg_loss=0.0112  elapsed=10.0s
+2026-07-14 11:42:49,396 [r0] INFO epoch 50 VAL loss=0.0885 R^2_med=0.9233 amp_v=0.0000 didt_v=0.0818
+2026-07-14 11:42:50,011 [r0] INFO epoch 51 step 0/31  loss=0.0104  lr=1.78e-05
+2026-07-14 11:42:59,552 [r0] INFO epoch 51 train avg_loss=0.0113  elapsed=10.0s
+2026-07-14 11:42:59,860 [r0] INFO epoch 51 VAL loss=0.0899 R^2_med=0.9208 amp_v=0.0000 didt_v=0.0819
+2026-07-14 11:43:00,356 [r0] INFO epoch 52 step 0/31  loss=0.0112  lr=1.41e-05
+2026-07-14 11:43:09,896 [r0] INFO epoch 52 train avg_loss=0.0112  elapsed=10.0s
+2026-07-14 11:43:10,208 [r0] INFO epoch 52 VAL loss=0.0909 R^2_med=0.9196 amp_v=0.0000 didt_v=0.0817
+2026-07-14 11:43:10,715 [r0] INFO epoch 53 step 0/31  loss=0.0095  lr=1.08e-05
+2026-07-14 11:43:20,254 [r0] INFO epoch 53 train avg_loss=0.0110  elapsed=10.0s
+2026-07-14 11:43:20,568 [r0] INFO epoch 53 VAL loss=0.0905 R^2_med=0.9200 amp_v=0.0000 didt_v=0.0816
+2026-07-14 11:43:21,067 [r0] INFO epoch 54 step 0/31  loss=0.0117  lr=7.96e-06
+2026-07-14 11:43:30,608 [r0] INFO epoch 54 train avg_loss=0.0107  elapsed=10.0s
+2026-07-14 11:43:30,911 [r0] INFO epoch 54 VAL loss=0.0882 R^2_med=0.9218 amp_v=0.0000 didt_v=0.0820
+2026-07-14 11:43:31,468 [r0] INFO epoch 55 step 0/31  loss=0.0121  lr=5.52e-06
+2026-07-14 11:43:41,011 [r0] INFO epoch 55 train avg_loss=0.0106  elapsed=10.0s
+2026-07-14 11:43:41,313 [r0] INFO epoch 55 VAL loss=0.0900 R^2_med=0.9204 amp_v=0.0000 didt_v=0.0814
+2026-07-14 11:43:41,872 [r0] INFO epoch 56 step 0/31  loss=0.0124  lr=3.52e-06
+2026-07-14 11:43:51,411 [r0] INFO epoch 56 train avg_loss=0.0107  elapsed=10.0s
+2026-07-14 11:43:51,717 [r0] INFO epoch 56 VAL loss=0.0894 R^2_med=0.9206 amp_v=0.0000 didt_v=0.0817
+2026-07-14 11:43:52,209 [r0] INFO epoch 57 step 0/31  loss=0.0092  lr=1.96e-06
+2026-07-14 11:44:01,747 [r0] INFO epoch 57 train avg_loss=0.0103  elapsed=10.0s
+2026-07-14 11:44:02,059 [r0] INFO epoch 57 VAL loss=0.0899 R^2_med=0.9203 amp_v=0.0000 didt_v=0.0815
+2026-07-14 11:44:02,552 [r0] INFO epoch 58 step 0/31  loss=0.0106  lr=8.54e-07
+2026-07-14 11:44:12,087 [r0] INFO epoch 58 train avg_loss=0.0111  elapsed=10.0s
+2026-07-14 11:44:12,390 [r0] INFO epoch 58 VAL loss=0.0892 R^2_med=0.9207 amp_v=0.0000 didt_v=0.0816
+2026-07-14 11:44:12,877 [r0] INFO epoch 59 step 0/31  loss=0.0120  lr=2.01e-07
+2026-07-14 11:44:22,423 [r0] INFO epoch 59 train avg_loss=0.0110  elapsed=10.0s
+2026-07-14 11:44:22,728 [r0] INFO epoch 59 VAL loss=0.0892 R^2_med=0.9207 amp_v=0.0000 didt_v=0.0816

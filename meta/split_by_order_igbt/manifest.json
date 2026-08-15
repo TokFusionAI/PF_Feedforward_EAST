@@ -1,0 +1,60 @@
+{
+  "ordering": "chronological_by_shot",
+  "filter": "shot >= 117203 and all_ok and flat_top_dur_s > 2.0 and src_efit notna and IP_max_kA >= 200",
+  "data_sources": {
+    "shot_index": "/home/user/PF_current_EAST/meta/shot_index.parquet",
+    "flat_top": "/home/user/PF_current_EAST/meta/flat_top_dur.parquet",
+    "logbook": "/home/user/PF_current_EAST/meta/split_by_order/logbook_ge100000_shot_summary_unflagged.csv"
+  },
+  "criteria": {
+    "min_shot": 117203,
+    "min_flat_top_s": 2.0,
+    "min_ip_kA": 200,
+    "require_all_ok": true,
+    "require_efit": true,
+    "note": "no dt_median filter, no group/comment exclusion per user spec"
+  },
+  "ratios": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "pool_n": 21297,
+  "funnel": [
+    {
+      "step": "shot >= 117203",
+      "n": 23164
+    },
+    {
+      "step": "+all_ok",
+      "n": 23162
+    },
+    {
+      "step": "+flat_top > 2.0s",
+      "n": 22758
+    },
+    {
+      "step": "+EFIT (src_efit notna)",
+      "n": 22758
+    },
+    {
+      "step": "+IP >= 200kA",
+      "n": 21297
+    }
+  ],
+  "train": {
+    "n": 17038,
+    "min": 117383,
+    "max": 152761
+  },
+  "val": {
+    "n": 2130,
+    "min": 152764,
+    "max": 156432
+  },
+  "test": {
+    "n": 2129,
+    "min": 156434,
+    "max": 159876
+  }
+}
